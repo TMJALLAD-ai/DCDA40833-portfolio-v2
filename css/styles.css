@@ -161,7 +161,8 @@ main section li {
 }
 
 .viz-container img {
-    max-width: 100%;           /* Responsive: never wider than container */
+    max-width: 300px;          /* Limit maximum width */
+    width: 100%;               /* Scale responsively on smaller screens */
     height: auto;              /* Maintain aspect ratio */
     border-radius: 8px;
     box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
