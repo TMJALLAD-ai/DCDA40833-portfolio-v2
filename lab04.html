@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tableau Visualization | Taysir "TJ" Jallad</title>
+    <link rel="stylesheet" href="css/styles.css">
+</head>
+<body>
+    <header>
+        <nav>
+            <a href="index.html">Home</a>
+            <a href="lab02.html">Lab 2: AI Evaluation</a>
+            <a href="lab03.html">Lab 3: Visualization Critique</a>
+            <a href="lab04.html" class="active">Lab 4: Tableau Visualization</a>
+            <!-- Add more lab links as the semester progresses -->
+        </nav>
+        <h1>Tableau Visualization</h1>
+    </header>
+
+    <main>
+        <section>
+            <h2>Introduction</h2>
+            <p>For this lab, I used Tableau Public to identify patterns and visualize data in a  Smartphone Usage, Productivity & Lifestyle Analytics Dataset. As someone who uses a smartphone daily and is aware of the ongoing conversation around screen time and its effects, I chose this dataset because I was curious on how phone usage relates to sleep, stress, and productivity.</p>
+        </section>
+
+        <section>
+            <h2>Published Visualization</h2>
+            <figure class="viz-container">
+                <!-- Tableau Public embed -->
+                <div class='tableauPlaceholder' id='viz1771204417883' style='position: relative'><noscript><a href='#'><img alt='Stress by Occupation ' src='https:&#47;&#47;public.tableau.com&#47;static&#47;images&#47;St&#47;StressbyOccupation&#47;Sheet1&#47;1_rss.png' style='border: none' /></a></noscript><object class='tableauViz'  style='display:none;'><param name='host_url' value='https%3A%2F%2Fpublic.tableau.com%2F' /> <param name='embed_code_version' value='3' /> <param name='site_root' value='' /><param name='name' value='StressbyOccupation&#47;Sheet1' /><param name='tabs' value='no' /><param name='toolbar' value='yes' /><param name='static_image' value='https:&#47;&#47;public.tableau.com&#47;static&#47;images&#47;St&#47;StressbyOccupation&#47;Sheet1&#47;1.png' /> <param name='animate_transition' value='yes' /><param name='display_static_image' value='yes' /><param name='display_spinner' value='yes' /><param name='display_overlay' value='yes' /><param name='display_count' value='yes' /><param name='language' value='en-US' /><param name='filter' value='publish=yes' /></object></div>
+                <script type='text/javascript'>
+                    var divElement = document.getElementById('viz1771204417883');
+                    var vizElement = divElement.getElementsByTagName('object')[0];
+                    vizElement.style.width='100%';vizElement.style.height=(divElement.offsetWidth*0.75)+'px';
+                    var scriptElement = document.createElement('script');
+                    scriptElement.src = 'https://public.tableau.com/javascripts/api/viz_v1.js';
+                    vizElement.parentNode.insertBefore(scriptElement, vizElement);
+                </script>
+                <figcaption>
+                    <strong>Title:</strong> Stress by Occupation<br>
+                    <strong>Dataset:</strong> Smartphone Usage and Productivity Dataset (Kaggle)<br>
+                    <strong>Published on:</strong> <a href="https://public.tableau.com/views/StressbyOccupation/Sheet1?:language=en-US&publish=yes&:sid=&:redirect=auth&:display_count=n&:origin=viz_share_link" target="_blank">View on Tableau Public</a>
+                </figcaption>
+            </figure>
+        </section>
+
+        <section>
+            <h2>Reflection &amp; Analysis</h2>
+
+            <h3>1. Data Preparation</h3>
+            <!-- TODO: Discuss any errors you received trying to upload your dataset and what you needed to do to prepare it for a successful upload. -->
+            <p>The CSV was pretty easy to upload into Tableau Public without errors, and most fields were detected correctly. The one fix I had to make right away was converting User ID from a measure into a dimension, since it is an identifier/unique key for the data points and I did not want to be summed. Tableau also defaulted Stress Level to a continuous measure, but I needed each stress level (1 through 10) to behave like a category, so I converted it to a dimension as well. The bigger issue was actually visual and not technical. The dataset has 50,000 rows and many of the fields in the dataset are discrete whole numbers, so the scatter plots I tried at the start were unreadable due to overplotting. This forced me to think about how to aggregate the data in a way that actually shows the distribution in a useful, readable way instead of just piling dots on top of each other.</p>
+
+            <h3>2. Design Choices</h3>
+            <!-- TODO: Describe the choices you made in terms of the visualization's metrics and dimensions. -->
+            <p>I ended with a stacked bar chart that compares stress distributions across occupations. Occupation sits on the Rows shelf, Count of User ID is on the Columns shelf, and Stress Level is placed on Color as a dimension. I chose this after trying several other charts that either looked too noisy and did not communiate much value (scatter plots), too flat (averages by occupation), or too grid-like to be readable (heat maps). The stacked bar chart is simple and readable at a glance, but it still shows something meaningful. Using a color gradient (green for low, red for high) for stress levels lets the viewer immediately see which segments skew low or high .</p>
+
+            <h3>3. Expected Patterns</h3>
+            <!-- TODO: Describe the patterns or trends you expected to see based on your understanding of the topic. How much of your understanding is confirmed by the visualization? Focus on a particular section of the graph. -->
+            <p>Going in, I expected Business Owners to be the most stressed group. This occupation in general seems like it would have the heaviest responsibilities that are unique from most occupations. Running the business, dealing with financial risk, and making high-stakes decisions felt like it would push their stress levels higher than anyone else, so I assumed the Business Owner bar would have the largest high-stress segments (the red). I also would have assumed students be on the low end; I am no stranger to academic pressure, being a student comes with a burden of homework that is not seen in most occupations that can typically seperate their "home"and work." However, students typically have the least financial responsibilities, so I still expected them to be on the low side.</p>
+
+            <h3>4. Surprises/Outliers</h3>
+            <!-- TODO: Describe where the visualization deviates from your expectations. Focus on sections with "outliers" or surprises. -->
+            <p>The biggest surprise was how similar the bars look across all four occupations. This dataset is quite large (50,000 points) so I was expected some uniformity, but definitely not to this degree. The stress distributions are almost identical, and none of the categories stands out as dramatically higher or lower stress. Additionally, the segmentation looks quite balanced across the board. If anything, the lack of strong outliers became the outlier. This flatness feels allows the visual to communicate that occupation alone is not a strong predictor of stress, which is not what I would have guessed before making the chart.</p>
+
+            <h3>5. Questions for Further Investigation</h3>
+            <!-- TODO: Draft questions that would help explain the outliers/surprises. The goal is to frame questions for deeper investigation, not to offer definitive explanations. -->
+            <p>The results from my visualization and testing lead me to test different categories. If occupation is not driving stress differences, what is? Or is there even a variable that would consisently show a positive trend in stress - can stress be random?  I am also curious whether Caffeine Intake has a strong affect the relationship between stress and sleep; I would assume yes, but it is clear that my assumptions are not always precise. Another question is whether this dataset is representative or possibly synthetic. The uniform distribution makes me wonder how the data was collected and whether the sampling or generation process smoothed out real-world differences. Adding context like income level, exercise habits, or sleep quality could make the story clearer.</p>
+
+            <h3>6. Tool Evaluation</h3>
+            <!-- TODO: Evaluate Tableau Public as a visualization tool. What can it do that others cannot? What limitations did you encounter? -->
+            <p>Tableau Public was great for quickly testing different visuals. It is definitely a great tool for a non-professionals or people without a background in data visualization trying to play around with different options. It also handled a 50,000-row dataset without lag, which I assume might not be so seamless as something like Excel. The biggest limitation was that Tableau defaults to SUM for numeric fields, which caused a lot of early confusion and ugly visuals until I manually switched to Count or Average. Tableau's ability to make assumptions on what you want became kind of like a double-edged sword, because in some cases that was helpful, but in these cases where categories defaulted to the wrong measure, it left me second-guessing myself to change the right thing. The distinction between measures and dimensions is powerful but not intuitive at first, and it directly affects whether a chart makes sense or not. Another drawback is that Tableau Public requires publishing to the cloud, so you cannot save locally. Overall, Tableau is excellent for fast visual exploration and presentation, but it takes practice to avoid misleading defaults.</p>
+        </section>
+    </main>
+
+    <footer>
+        <p>&copy; 2026 Taysir "TJ" Jallad</p>
+    </footer>
+</body>
+</html>
