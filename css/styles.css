@@ -93,7 +93,7 @@ header p {
 
 nav {
     background-color: var(--nav-bg);
-    padding: 0.75rem;
+    padding: 0.75rem 8.5rem 0.75rem 0.75rem;
     display: flex;              /* Make nav a flex container */
     justify-content: center;    /* Center the ul inside nav */
     position: sticky;           /* Stick to top when scrolling */
@@ -112,7 +112,7 @@ nav ul {
     justify-content: center;    /* Center the items */
     gap: 1rem;                  /* Space between items */
     flex-wrap: wrap;            /* Wrap on small screens */
-    margin-right: 7.5rem;
+    margin-right: 0;
 }
 
 nav li {

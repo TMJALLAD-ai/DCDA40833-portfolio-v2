@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Lab 06 Python Mapping with Folium and Mapbox.">
+    <title>Lab 6: Python Mapping | Taysir "TJ" Jallad</title>
+    <link rel="stylesheet" href="css/styles.css">
+</head>
+<body>
+    <header>
+        <nav data-nav>
+            <button class="nav-toggle" type="button" aria-label="Toggle navigation menu" aria-expanded="false">
+                <span class="hamburger-line"></span>
+                <span class="hamburger-line"></span>
+                <span class="hamburger-line"></span>
+            </button>
+            <button class="theme-toggle" type="button" aria-label="Switch to dark mode" aria-pressed="false">
+                <span class="theme-toggle-icon" aria-hidden="true">🌙</span>
+                <span class="theme-toggle-text">Dark mode</span>
+            </button>
+            <ul>
+                <li><a href="index.html">Home</a></li>
+                <li><a href="lab02.html">Lab 2: AI Evaluation</a></li>
+                <li><a href="lab03.html">Lab 3: Visualization Critique</a></li>
+                <li><a href="lab04.html">Lab 4: Tableau Visualization</a></li>
+                <li><a href="lab05.html">Lab 5: Vibe Coding</a></li>
+                <li><a href="lab06.html" class="active">Lab 6: Python Mapping</a></li>
+            </ul>
+        </nav>
+        <h1>Lab 06: Python Mapping</h1>
+    
+    </header>
+
+    <main>
+        <section id="overview">
+            <h2>Overview</h2>
+            <p>This lab combines a custom Mapbox basemap, a hometown locations dataset, and a Python-generated interactive map centered around my hometown, Flower Mound, TX.</p>
+        </section>
+
+        <section id="map-output">
+            <h2>Interactive Map</h2>
+            <p><a href="lab06_map.html" target="_blank">Open Interactive Map in New Tab</a></p>
+            <figure class="viz-container">
+                <iframe
+                    src="lab06_map.html"
+                    title="Lab 6 Interactive Hometown Map"
+                    width="100%"
+                    height="600"
+                    style="border:0; border-radius:8px;"
+                    loading="lazy">
+                </iframe>
+                <figcaption>Interactive hometown map created with Python. My custom mapbox style is <a href="https://studio.mapbox.com/styles/tjjallad/cmm0rqpob005901s1653vfhwf" target="_blank">cmm0rqpob005901s1653vfhwf</a></figcaption>
+            </figure>
+        </section>
+
+        <section id="reflection">
+            <h2>Written Reflection (250–500 Words)</h2>
+            <h3>1. Design Inspiration</h3>
+            <figure class="viz-container">
+                <img src="images/iccolorpal.png" alt="Color palette reference image used to inspire the Lab 6 Mapbox style">
+                <figcaption>Reference image: color palette used to guide my custom Mapbox basemap design.</figcaption>
+            </figure>
+            <p>My basemap design was inspired by the color palette in the reference image above from the movie The Iron Claw which is a personal favorite of mine. I wanted the map to feel clean and modern, but still have some personality and warmth. I used the palette as a guide for land/water contrast and tried to keep roads and labels readable without making the map feel too loud.</p>
+
+            <h3>2. Cartographic Challenges</h3>
+            <p>The biggest cartographic challenge was making sure each component worked in harmony and did not clash with the others. I had to balance water, land, roads, terrain, and labels so no single element overpowered the map. When labels were too heavy, they fought with the markers; when roads were too bright, they distracted from the points I actually wanted viewers to focus on. I spent most of my revisions adjusting hierarchy and contrast so the basemap supported the hometown data instead of competing with it.</p>
+
+            <h3>3. Technical Challenges</h3>
+            <p>AI helped with most of the coding, especially building the script structure and speeding up setup. I still had to do the quality checks myself by running the map, verifying geocoding results, checking popup formatting, and making sure the final output actually looked right. So AI handled a lot of the heavy lifting, but I was still responsible for final accuracy and presentation quality.</p>
+        </section>
+    </main>
+
+    <footer>
+        <p>&copy; 2026 Taysir "TJ" Jallad | DCDA 40833</p>
+    </footer>
+
+    <script src="js/nav.js"></script>
+</body>
+</html>
