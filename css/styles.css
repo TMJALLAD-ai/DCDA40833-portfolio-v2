@@ -28,6 +28,7 @@
 }
 
 [data-theme="dark"] {
+    /* I understand that this creates the dark mode palette by overriding the same root variables. */
     --primary-color: #c4b5fd;
     --secondary-color: #a78bfa;
     --accent-color: #facc15;
@@ -159,6 +160,7 @@ nav a:hover {
 }
 
 .theme-toggle {
+    /* I understand that this positions the theme toggle on the right side of the nav bar. */
     position: absolute;
     right: 0.75rem;
     top: 50%;
@@ -419,6 +421,7 @@ tr:nth-child(even) {
 }
 
 .portfolio-card:hover {
+    /* I understand that this creates a hover effect so each card feels more interactive. */
     border-color: var(--primary-color);
     box-shadow: 0 8px 16px rgba(77, 25, 121, 0.15);
     transform: translateY(-4px);
@@ -474,6 +477,7 @@ footer a:hover {
    Responsive Design (Mobile)
    ========================= */
 @media (max-width: 768px) {
+    /* I understand that this media query applies mobile-specific layout rules below 768px. */
     header h1 {
         font-size: 1.5rem;     /* Smaller on mobile */
     }
@@ -511,6 +515,7 @@ footer a:hover {
     }
 
     nav.nav-open ul {
+        /* I understand this shows the menu after JS adds nav-open, but I did not write the JS logic myself. */
         display: flex;
     }
 
